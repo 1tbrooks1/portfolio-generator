@@ -1,7 +1,145 @@
+const fs = require('fs');
+const generatePage = require('./src/page-template.js');
+
 const profileDataArgs = process.argv.slice(2);
 
+const [name, github] = profileDataArgs;
 
-const printProfileData = profileDataArr => {
+const pageHTML = generatePage(name, github);
+
+fs.writeFile('index.html', pageHTML, err => {
+    if (err) throw err;
+
+    console.log('Portfolio complete! Checkout out index.html to see the output!')
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const printProfileData = profileDataArr => {
     // This...
     for (let i=0; i < profileDataArr.length; i++) {
     console.log(profileDataArr[i]);
@@ -15,4 +153,4 @@ profileDataArr.forEach(profileItem => console.log(profileItem));
 
 };
 
-printProfileData(profileDataArgs);
+printProfileData(profileDataArgs);*/
